@@ -35,17 +35,47 @@ var object2={
 }
 */
 
-//1) WRITE YOUR CODE UNDER THIS LINE         
+//1) WRITE YOUR CODE UNDER THIS LINE    
 
-//2) WRITE YOUR CODE UNDER THIS LINE         
+// 1) 
+// function = (x,y) =>  x+y
 
-//3) WRITE YOUR CODE UNDER THIS LINE         
+//2) WRITE YOUR CODE UNDER THIS LINE     
 
-//4) WRITE YOUR CODE UNDER THIS LINE         
+// 2) 
+// function = (x,y) => {
+//   console.log(x)
+//   return y
+// }
+
+
+//3) WRITE YOUR CODE UNDER THIS LINE  
+ 
+
+// 3) 
+// var name="Alex"
+// var age=25
+// var result = {{My name is: { name } and my age is:  {age} }}
+
+
+
+//4) WRITE YOUR CODE UNDER THIS LINE   
+
+// var food="Fried Chicken"
+// var color="Blue"
+// var object={
+//   food,
+//   color
+// }
 
 //5) WRITE YOUR CODE UNDER THIS LINE         
 
-
+// 5)
+// var object2={
+//   multi = (a,b) =>   a * b
+//    
+//   
+// }
 
 
 
@@ -75,8 +105,39 @@ Output =>
 // WRITE YOUR CODE UNDER THIS LINE
 
 
+    /* Q2:
+Using OOP
+Create a class called Computer
+that takes three parameter (OS,RAM,CPU)
+and a method called doubleRAM the ram to double and return the new ram
+and make three instantiations from it
+computer1 => Windows,16,I7
+computer2 => Linux,8,I5
+computer3 => Mac,4,I3
+
+Example: 
+computer1
+Output =>
+{
+  OS:'Windows',
+  RAM:16,
+  CPU:'I7',
+  doubleRAM:f(){}
+}
+*/
 
 
+
+class Computer (object ,doubleRAM, num  ){
+   
+        this.OS = OS
+        this.RAM = RAM
+        this.CPU = CPU
+}
+
+ computer1 = computer (Windows,16,I7)
+ computer2 = computer (Linux,8,I5)
+ computer3 = computer (Mac,4,I3)
 
 
 
@@ -93,26 +154,29 @@ export default class App extends Component {
     title: 'ELIZABETH GREENE',
     todos: ['eat', 'eat eat', 'eact again']
   };
-  changeTitle() {
+  changeTitle = () => {
     state.title = 'AGGREGOR ZOLDYCK'
   }
   render() {
     return (
-      <h1>App Component => state.title</h1>
+      <>
+      <h1>App Component { this.state.title}</h1>
       <button onClick={this.changeTitle}>Change Title</button>
-      <Tasks tasks={this.todos} changeTitleFromChild={this.changeTitle} />
+      <Tasks tasks={this.state.todos} changeTitleFromChild={this.changeTitle} />
+      </>
     );
   }
 }
 
 // Tasks Component
 import React, { Component } from 'react';
+import todos from './components/Table'
 
 class Tasks extends Component {
   state = {
     day: "Sat"
   };
-  changeDay() {
+  changeDay =() => {
     day = 'Sun'
   }
 
@@ -121,7 +185,7 @@ class Tasks extends Component {
       <div>
         <h1>Tasks Component => state.day</h1>
         <button onClick={this.changeDay}>Change Tasks State</button>
-        <button onClick={changeTitle}>Change App State</button>
+        <button onClick={this.changeTitle}>Change App State</button>
       </div>
     );
   }
